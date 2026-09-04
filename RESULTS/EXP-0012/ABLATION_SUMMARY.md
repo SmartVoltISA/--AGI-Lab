@@ -3,14 +3,16 @@
 Status: EXECUTED
 Seeds: 20
 
-Adaptation delta (C_on − C_off): -0.700 steps
+The ablation compares the same organism with affective modulation enabled (C_on) and disabled (C_off). C_off is also compared against B_memory as an identity control.
 
-Reward delta (C_on − C_off): -27.400
+- Adaptation delta (C_on − C_off): **-0.700 steps**
+- Reward delta (C_on − C_off): **-27.400**
+- Switch error delta: **+0.051875**
+- Transfer delta: **-0.005**
+- C_off trace equals B_memory trace: **1.000**
 
-Switch error delta: 0.052
+Interpretation: affective modulation was causally active, but in this deterministic environment it produced only a small adaptation-speed improvement while reducing cumulative reward and increasing switch error. No transfer advantage was observed.
 
-Transfer delta: -0.005
+Classification for the tested hypothesis: **FAILURE**.
 
-C_off trace equals B trace: 1.000
-
-Ablation is evidence about causal contribution of affective modulation; it is not a canonical architectural claim.
+This is evidence about this implementation and protocol only; it is not a canonical architectural claim.
