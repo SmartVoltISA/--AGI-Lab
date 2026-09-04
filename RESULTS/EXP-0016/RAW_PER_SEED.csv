@@ -1,5 +1,0 @@
-seed,B_reward,D_reward,B_false_switches,D_false_switches,B_first_adapt,D_first_adapt,B_second_adapt,D_second_adapt,B_correct_rate,D_correct_rate,B_revisions,D_revisions
-0,92.0,94.0,9.0,5.0,0.0,0.0,0.0,0.0,0.9,0.9166666666666666,20,14
-1,92.0,92.0,10.0,6.0,0.0,0.0,0.0,0.0,0.9,0.9,21,15
-2,94.0,92.0,9.0,7.0,0.0,0.0,0.0,0.0,0.9083333333333333,0.9,20,16
-3,94.0,94.0,10.0,6.0,0.0,0.0,0.0,0.0,0.9083333333333333,0.9083333333333333,21,15
