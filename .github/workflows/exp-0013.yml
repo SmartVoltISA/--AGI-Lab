@@ -1,0 +1,25 @@
+name: EXP-0013
+on:
+  push:
+    branches: [exp-0013-run]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run experiment
+        working-directory: EXPERIMENTS/EXP-0013
+        run: python run.py
+      - name: Commit results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add RESULTS/EXP-0013/raw_results.json
+          git diff --cached --quiet || git commit -m 'EXP-0013: record raw result'
+          git push
