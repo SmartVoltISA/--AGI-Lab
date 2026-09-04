@@ -1,0 +1,195 @@
+{
+  "experiment": "EXP-0012-ABLATION",
+  "status": "EXECUTED",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "paired": [
+    {
+      "seed": 0,
+      "adaptation_delta_on_minus_off": 16,
+      "reward_delta_on_minus_off": -26.0,
+      "switch_error_delta_on_minus_off": 0.09999999999999998,
+      "transfer_delta_on_minus_off": -0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 1,
+      "adaptation_delta_on_minus_off": -13,
+      "reward_delta_on_minus_off": -22.0,
+      "switch_error_delta_on_minus_off": 0.0,
+      "transfer_delta_on_minus_off": 0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 2,
+      "adaptation_delta_on_minus_off": -2,
+      "reward_delta_on_minus_off": -40.0,
+      "switch_error_delta_on_minus_off": 0.0875,
+      "transfer_delta_on_minus_off": 0.050000000000000044,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 3,
+      "adaptation_delta_on_minus_off": 7,
+      "reward_delta_on_minus_off": -48.0,
+      "switch_error_delta_on_minus_off": 0.1375,
+      "transfer_delta_on_minus_off": -0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 4,
+      "adaptation_delta_on_minus_off": 11,
+      "reward_delta_on_minus_off": -24.0,
+      "switch_error_delta_on_minus_off": 0.04999999999999999,
+      "transfer_delta_on_minus_off": -0.125,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 5,
+      "adaptation_delta_on_minus_off": 10,
+      "reward_delta_on_minus_off": -26.0,
+      "switch_error_delta_on_minus_off": 0.0875,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 6,
+      "adaptation_delta_on_minus_off": 5,
+      "reward_delta_on_minus_off": -30.0,
+      "switch_error_delta_on_minus_off": 0.07500000000000001,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 7,
+      "adaptation_delta_on_minus_off": -17,
+      "reward_delta_on_minus_off": -34.0,
+      "switch_error_delta_on_minus_off": 0.024999999999999994,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 8,
+      "adaptation_delta_on_minus_off": 2,
+      "reward_delta_on_minus_off": -44.0,
+      "switch_error_delta_on_minus_off": 0.07500000000000001,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 9,
+      "adaptation_delta_on_minus_off": -21,
+      "reward_delta_on_minus_off": -4.0,
+      "switch_error_delta_on_minus_off": -0.07500000000000001,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 10,
+      "adaptation_delta_on_minus_off": 13,
+      "reward_delta_on_minus_off": -44.0,
+      "switch_error_delta_on_minus_off": 0.15000000000000002,
+      "transfer_delta_on_minus_off": 0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 11,
+      "adaptation_delta_on_minus_off": -4,
+      "reward_delta_on_minus_off": -18.0,
+      "switch_error_delta_on_minus_off": 0.08750000000000002,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 12,
+      "adaptation_delta_on_minus_off": 4,
+      "reward_delta_on_minus_off": -38.0,
+      "switch_error_delta_on_minus_off": 0.04999999999999999,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 13,
+      "adaptation_delta_on_minus_off": 5,
+      "reward_delta_on_minus_off": -32.0,
+      "switch_error_delta_on_minus_off": 0.0,
+      "transfer_delta_on_minus_off": -0.07499999999999996,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 14,
+      "adaptation_delta_on_minus_off": -5,
+      "reward_delta_on_minus_off": 2.0,
+      "switch_error_delta_on_minus_off": -0.08749999999999997,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 15,
+      "adaptation_delta_on_minus_off": -3,
+      "reward_delta_on_minus_off": -14.0,
+      "switch_error_delta_on_minus_off": -0.025000000000000022,
+      "transfer_delta_on_minus_off": 0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 16,
+      "adaptation_delta_on_minus_off": -8,
+      "reward_delta_on_minus_off": -16.0,
+      "switch_error_delta_on_minus_off": 0.05000000000000002,
+      "transfer_delta_on_minus_off": 0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 17,
+      "adaptation_delta_on_minus_off": 1,
+      "reward_delta_on_minus_off": -40.0,
+      "switch_error_delta_on_minus_off": 0.11249999999999999,
+      "transfer_delta_on_minus_off": -0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 18,
+      "adaptation_delta_on_minus_off": -9,
+      "reward_delta_on_minus_off": -12.0,
+      "switch_error_delta_on_minus_off": 0.0,
+      "transfer_delta_on_minus_off": 0.025000000000000022,
+      "trace_identical_when_affect_disabled": null
+    },
+    {
+      "seed": 19,
+      "adaptation_delta_on_minus_off": -6,
+      "reward_delta_on_minus_off": -38.0,
+      "switch_error_delta_on_minus_off": 0.1375,
+      "transfer_delta_on_minus_off": 0.0,
+      "trace_identical_when_affect_disabled": null
+    }
+  ],
+  "summary": {
+    "adaptation_delta_mean": -0.7,
+    "reward_delta_mean": -27.4,
+    "switch_error_delta_mean": 0.051875000000000004,
+    "transfer_delta_mean": -0.004999999999999993,
+    "disabled_trace_identity_rate": 0.0
+  }
+}
