@@ -1,16 +1,21 @@
-"""Paired ablation: C with affect enabled vs the same organism with affect disabled."""
+"""Paired ablation: C_on vs C_off, with B as an identity control."""
 import json
 import statistics
 from pathlib import Path
 
-from experiment import DeterministicWorld, OrganismAgent
+from experiment import DeterministicWorld, MemoryAgent, OrganismAgent
 
 SEEDS = list(range(20))
 
 
-def run(seed, affect_enabled):
+def run(seed, mode):
     world = DeterministicWorld(seed)
-    agent = OrganismAgent(seed, affect_enabled=affect_enabled)
+    if mode == "C_on":
+        agent = OrganismAgent(seed, affect_enabled=True)
+    elif mode == "C_off":
+        agent = OrganismAgent(seed, affect_enabled=False)
+    else:
+        agent = MemoryAgent(seed)
     rows = []
     while True:
         obs = world.observation()
@@ -21,8 +26,7 @@ def run(seed, affect_enabled):
         rows.append((reward, p, action))
         if done:
             break
-    switch = 80
-    transfer = 160
+    switch, transfer = 80, 160
     rewards = [x[0] for x in rows]
     return {
         "seed": seed,
@@ -42,35 +46,30 @@ def _adaptation(rewards, window=8):
 
 
 def main():
-    on = [run(s, True) for s in SEEDS]
-    off = [run(s, False) for s in SEEDS]
+    on = [run(s, "C_on") for s in SEEDS]
+    off = [run(s, "C_off") for s in SEEDS]
+    baseline = [run(s, "B") for s in SEEDS]
     paired = []
-    for a, b in zip(on, off):
+    for a, b, base in zip(on, off, baseline):
         paired.append({
             "seed": a["seed"],
             "adaptation_delta_on_minus_off": (a["adaptation"] - b["adaptation"]) if a["adaptation"] is not None and b["adaptation"] is not None else None,
             "reward_delta_on_minus_off": a["reward"] - b["reward"],
             "switch_error_delta_on_minus_off": a["switch_error"] - b["switch_error"],
             "transfer_delta_on_minus_off": a["transfer_accuracy"] - b["transfer_accuracy"],
-            "trace_identical_when_affect_disabled": a["trace"] == b["trace"] if not a["trace"] else None,
+            "off_equals_B_trace": b["trace"] == base["trace"],
         })
-    payload = {
-        "experiment": "EXP-0012-ABLATION",
-        "status": "EXECUTED",
-        "seeds": SEEDS,
-        "paired": paired,
-        "summary": {
-            "adaptation_delta_mean": statistics.mean(x["adaptation_delta_on_minus_off"] for x in paired if x["adaptation_delta_on_minus_off"] is not None),
-            "reward_delta_mean": statistics.mean(x["reward_delta_on_minus_off"] for x in paired),
-            "switch_error_delta_mean": statistics.mean(x["switch_error_delta_on_minus_off"] for x in paired),
-            "transfer_delta_mean": statistics.mean(x["transfer_delta_on_minus_off"] for x in paired),
-            "disabled_trace_identity_rate": statistics.mean(1.0 if x["trace_identical_when_affect_disabled"] else 0.0 for x in paired),
-        },
+    summary = {
+        "adaptation_delta_mean": statistics.mean(x["adaptation_delta_on_minus_off"] for x in paired if x["adaptation_delta_on_minus_off"] is not None),
+        "reward_delta_mean": statistics.mean(x["reward_delta_on_minus_off"] for x in paired),
+        "switch_error_delta_mean": statistics.mean(x["switch_error_delta_on_minus_off"] for x in paired),
+        "transfer_delta_mean": statistics.mean(x["transfer_delta_on_minus_off"] for x in paired),
+        "off_equals_B_trace_rate": statistics.mean(1.0 if x["off_equals_B_trace"] else 0.0 for x in paired),
     }
+    payload = {"experiment": "EXP-0012-ABLATION", "status": "EXECUTED", "seeds": SEEDS, "paired": paired, "summary": summary}
     path = Path("RESULTS/EXP-0012/ablation_results.json")
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    summary = payload["summary"]
     Path("RESULTS/EXP-0012/ABLATION_SUMMARY.md").write_text(
         "# EXP-0012 — Affect ablation\n\n"
         f"Status: {payload['status']}\nSeeds: {len(SEEDS)}\n\n"
@@ -78,8 +77,8 @@ def main():
         f"Reward delta (C_on − C_off): {summary['reward_delta_mean']:.3f}\n\n"
         f"Switch error delta: {summary['switch_error_delta_mean']:.3f}\n\n"
         f"Transfer delta: {summary['transfer_delta_mean']:.3f}\n\n"
-        f"Disabled-affect trace identity rate: {summary['disabled_trace_identity_rate']:.3f}\n\n"
-        "Ablation is evidence about causal contribution of the affective modulation; it is not a canonical architectural claim.\n",
+        f"C_off trace equals B trace: {summary['off_equals_B_trace_rate']:.3f}\n\n"
+        "Ablation is evidence about causal contribution of affective modulation; it is not a canonical architectural claim.\n",
         encoding="utf-8",
     )
 
