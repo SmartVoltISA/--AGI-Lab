@@ -44,4 +44,4 @@ This is evidence for this implementation and protocol only. It is not a general 
 
 ## Cleanup
 
-Temporary executable experiment machinery was deleted after execution. Results, raw observations, parameters, journal and execution specification remain. Canonical `--AGI` and Space remain unchanged.
+Temporary executable experiment machinery was deleted after execution. The complete raw run was verified locally and fingerprinted by SHA-256; the repository retains the aggregate evidence, execution specification, journal and source hash. Canonical `--AGI` and Space remain unchanged.
