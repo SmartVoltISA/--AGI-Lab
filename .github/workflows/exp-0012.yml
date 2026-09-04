@@ -1,0 +1,36 @@
+name: EXP-0012
+
+on:
+  push:
+    paths:
+      - 'EXPERIMENTS/EXP-0012/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run tests
+        run: python -m unittest discover -s EXPERIMENTS/EXP-0012 -p 'test_*.py' -v
+
+      - name: Run primary experiment
+        run: python EXPERIMENTS/EXP-0012/run_experiment.py --output RESULTS/EXP-0012/primary_results.json
+
+      - name: Save results
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add RESULTS/EXP-0012/primary_results.json
+          git diff --cached --quiet || git commit -m 'Record EXP-0012 primary results'
+          git push
