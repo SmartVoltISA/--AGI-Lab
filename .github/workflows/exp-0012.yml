@@ -30,10 +30,13 @@ jobs:
       - name: Build compact summary
         run: python EXPERIMENTS/EXP-0012/summarize_results.py RESULTS/EXP-0012/primary_results.json
 
+      - name: Run affect ablation
+        run: python EXPERIMENTS/EXP-0012/run_ablation.py
+
       - name: Save results
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add RESULTS/EXP-0012/primary_results.json RESULTS/EXP-0012/PRIMARY_SUMMARY.md
-          git diff --cached --quiet || git commit -m 'Record EXP-0012 primary results'
+          git add RESULTS/EXP-0012/primary_results.json RESULTS/EXP-0012/PRIMARY_SUMMARY.md RESULTS/EXP-0012/ablation_results.json RESULTS/EXP-0012/ABLATION_SUMMARY.md
+          git diff --cached --quiet || git commit -m 'Record EXP-0012 ablation results'
           git push
