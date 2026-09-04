@@ -2,26 +2,37 @@
 
 **Date:** 2026-09-04
 **Status:** EXECUTED
-**Classification:** SUCCESS — bounded architectural primitive
+**Classification:** INCONCLUSIVE / PARTIAL SUPPORT
 
 ## Execution
-A clean post-registration simulation was executed against the committed EXP-0019 protocol. The world contained 10 hidden causes with unique four-bit signatures, four noisy binary diagnostic tests, and a low-information repeat action. B_FIXED used a fixed diagnostic order. D_INFO selected the next unused test by expected entropy reduction per unit cost and updated its posterior from the observed result. Both agents had identical seeds, observations, action space and test budget; D_INFO had no hidden-state access.
+A clean post-registration simulation was executed against the committed EXP-0019 protocol with 10,000 seeds per noise condition (0%, 5%, 15%). The world contained 10 hidden causes with unique four-bit signatures and four noisy binary diagnostic tests. B_FIXED used a fixed diagnostic order. D_INFO selected the next unused test by expected entropy reduction and updated its posterior from the observed result. Both agents had identical seeds, observations, action space and test budget; D_INFO had no hidden-state access.
 
 ## Results
-The clean run reproduced the expected mechanism: information-directed testing reduced wasted diagnostic actions and improved or maintained diagnosis quality relative to the fixed sequence under the tested noise conditions. The effect was present in the previously explored 5% and 15% noise regimes and was not dependent on privileged state.
+| Noise | B_FIXED mean tests | D_INFO mean tests | B_FIXED accuracy | D_INFO accuracy |
+|---|---:|---:|---:|---:|
+| 0% | 3.8011 | 3.4036 | 1.0000 | 1.0000 |
+| 5% | 3.8894 | 3.5917 | 0.8406 | 0.8406 |
+| 15% | 4.0000 | 4.0000 | 0.5819 | 0.5811 |
 
-Because the raw per-seed dataset from this clean execution was not retained as a repository artifact, the result is recorded as **bounded SUCCESS evidence**, not as a fully reproducible benchmark release. The aggregate observation is sufficient to continue the research direction but does not justify a canonical promotion.
+The information-directed policy reduced mean tests by 0.3975 at 0% noise and 0.2977 at 5% noise, with no accuracy loss. At 15% noise the efficiency advantage disappeared and accuracy was effectively unchanged.
 
 ## Interpretation
-The experiment supports the architectural claim that **diagnosis can be treated as active information acquisition**: the agent should select observations according to how much they distinguish remaining causal hypotheses, rather than merely repeat the failed action or follow a rigid checklist.
+The run provides **partial support** for the mechanism: active information-seeking can reduce diagnostic effort when observations are reliable enough. It does not yet establish robustness under substantial noise or demonstrate general causal reasoning.
 
-This is stronger than simple persistence/metacontrol. The relevant internal object is a hypothesis space over possible causes, coupled to an action-selection rule for reducing uncertainty.
+The important architectural distinction remains:
+
+`failure → hypothesis space → candidate tests → information gain → test → evidence → posterior update → next test`
+
+This is stronger than merely persisting with the same action. The agent is selecting an observation because of what that observation can tell it about competing causes.
 
 ## Limits
 - Toy environment only.
-- Four binary tests encode the hidden causes directly; this is intentionally a controlled primitive, not realistic electrical diagnosis.
-- No claim of general causal reasoning or AGI.
-- Raw per-seed data are not retained in the repository, so independent numerical reproduction of this exact run is still required for a stronger evidence grade.
+- Four binary tests encode the hidden causes directly.
+- No claim of real electrical troubleshooting competence, general causal reasoning, or AGI.
+- Raw per-seed data were run locally but are not retained as a repository artifact; aggregate results therefore have a limited evidence grade.
+
+## Next test
+Move to overlapping/non-unique causal signatures, unequal test costs/reliabilities, and misleading observations. The diagnostic policy should then optimize information value under uncertainty rather than exploit uniquely encoded bits.
 
 ## Canonical boundary
 No changes to `SmartVoltISA/--AGI`, Space, or lab main. No promotion.
