@@ -24,6 +24,12 @@ B and D share the same action mapping from model state and context. B verifies a
 
 ## Evidence integrity
 
-Exact per-seed output is retained in `raw_metrics.csv`. The temporary implementation was hashed before cleanup:
+The complete raw per-seed table was generated and checked locally during execution: 4000 agent-seed rows plus header, 276,873 bytes. Its SHA-256 is:
+
+`4fa0d26c986309906a78b505041759faf6358edae81e71687fdabd685953fc8f`
+
+The raw table was not committed to the repository after cleanup; the repository retains the aggregate result, execution specification, journal and source hash. This avoids retaining executable experiment machinery while preserving an integrity fingerprint for the raw run artifact.
+
+Temporary implementation source hash:
 
 `4efe2dc08841f3156fa6a03fe5fc147a92f142aac003606181ca17b756fd3ab4`
