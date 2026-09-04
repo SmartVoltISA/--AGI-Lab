@@ -11,6 +11,6 @@ Switch error delta: 0.052
 
 Transfer delta: -0.005
 
-Disabled-affect trace identity rate: 0.000
+C_off trace equals B trace: 1.000
 
-Ablation is evidence about causal contribution of the affective modulation; it is not a canonical architectural claim.
+Ablation is evidence about causal contribution of affective modulation; it is not a canonical architectural claim.

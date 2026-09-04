@@ -30,7 +30,7 @@
       "reward_delta_on_minus_off": -26.0,
       "switch_error_delta_on_minus_off": 0.09999999999999998,
       "transfer_delta_on_minus_off": -0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 1,
@@ -38,7 +38,7 @@
       "reward_delta_on_minus_off": -22.0,
       "switch_error_delta_on_minus_off": 0.0,
       "transfer_delta_on_minus_off": 0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 2,
@@ -46,7 +46,7 @@
       "reward_delta_on_minus_off": -40.0,
       "switch_error_delta_on_minus_off": 0.0875,
       "transfer_delta_on_minus_off": 0.050000000000000044,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 3,
@@ -54,7 +54,7 @@
       "reward_delta_on_minus_off": -48.0,
       "switch_error_delta_on_minus_off": 0.1375,
       "transfer_delta_on_minus_off": -0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 4,
@@ -62,7 +62,7 @@
       "reward_delta_on_minus_off": -24.0,
       "switch_error_delta_on_minus_off": 0.04999999999999999,
       "transfer_delta_on_minus_off": -0.125,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 5,
@@ -70,7 +70,7 @@
       "reward_delta_on_minus_off": -26.0,
       "switch_error_delta_on_minus_off": 0.0875,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 6,
@@ -78,7 +78,7 @@
       "reward_delta_on_minus_off": -30.0,
       "switch_error_delta_on_minus_off": 0.07500000000000001,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 7,
@@ -86,7 +86,7 @@
       "reward_delta_on_minus_off": -34.0,
       "switch_error_delta_on_minus_off": 0.024999999999999994,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 8,
@@ -94,7 +94,7 @@
       "reward_delta_on_minus_off": -44.0,
       "switch_error_delta_on_minus_off": 0.07500000000000001,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 9,
@@ -102,7 +102,7 @@
       "reward_delta_on_minus_off": -4.0,
       "switch_error_delta_on_minus_off": -0.07500000000000001,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 10,
@@ -110,7 +110,7 @@
       "reward_delta_on_minus_off": -44.0,
       "switch_error_delta_on_minus_off": 0.15000000000000002,
       "transfer_delta_on_minus_off": 0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 11,
@@ -118,7 +118,7 @@
       "reward_delta_on_minus_off": -18.0,
       "switch_error_delta_on_minus_off": 0.08750000000000002,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 12,
@@ -126,7 +126,7 @@
       "reward_delta_on_minus_off": -38.0,
       "switch_error_delta_on_minus_off": 0.04999999999999999,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 13,
@@ -134,7 +134,7 @@
       "reward_delta_on_minus_off": -32.0,
       "switch_error_delta_on_minus_off": 0.0,
       "transfer_delta_on_minus_off": -0.07499999999999996,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 14,
@@ -142,7 +142,7 @@
       "reward_delta_on_minus_off": 2.0,
       "switch_error_delta_on_minus_off": -0.08749999999999997,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 15,
@@ -150,7 +150,7 @@
       "reward_delta_on_minus_off": -14.0,
       "switch_error_delta_on_minus_off": -0.025000000000000022,
       "transfer_delta_on_minus_off": 0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 16,
@@ -158,7 +158,7 @@
       "reward_delta_on_minus_off": -16.0,
       "switch_error_delta_on_minus_off": 0.05000000000000002,
       "transfer_delta_on_minus_off": 0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 17,
@@ -166,7 +166,7 @@
       "reward_delta_on_minus_off": -40.0,
       "switch_error_delta_on_minus_off": 0.11249999999999999,
       "transfer_delta_on_minus_off": -0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 18,
@@ -174,7 +174,7 @@
       "reward_delta_on_minus_off": -12.0,
       "switch_error_delta_on_minus_off": 0.0,
       "transfer_delta_on_minus_off": 0.025000000000000022,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     },
     {
       "seed": 19,
@@ -182,7 +182,7 @@
       "reward_delta_on_minus_off": -38.0,
       "switch_error_delta_on_minus_off": 0.1375,
       "transfer_delta_on_minus_off": 0.0,
-      "trace_identical_when_affect_disabled": null
+      "off_equals_B_trace": true
     }
   ],
   "summary": {
@@ -190,6 +190,6 @@
     "reward_delta_mean": -27.4,
     "switch_error_delta_mean": 0.051875000000000004,
     "transfer_delta_mean": -0.004999999999999993,
-    "disabled_trace_identity_rate": 0.0
+    "off_equals_B_trace_rate": 1.0
   }
 }
