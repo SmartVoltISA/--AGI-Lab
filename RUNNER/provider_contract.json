@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "input": {
+    "problem_id": "string",
+    "problem_statement": "string",
+    "run_id": "string",
+    "budget": {"max_candidates": "integer", "seed": "integer"}
+  },
+  "output": {
+    "candidates": [
+      {
+        "id": "string",
+        "claim": "string",
+        "argument": "string",
+        "dependencies": ["string"],
+        "status": "CANDIDATE"
+      }
+    ]
+  },
+  "trust": "Provider output is untrusted input. The runner never promotes provider output directly to VERIFIED."
+}
